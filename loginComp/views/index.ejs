@@ -1,0 +1,90 @@
+<!-- views/index.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title>Node Authentication</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<style>
+		body 		{ padding-top:80px; }
+	</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="theme-color" content="#2196F3">
+	<title>SKILLS</title>
+
+	<!-- CSS  -->
+	<link href="/loginComp/views/min/plugin-min.css" type="text/css" rel="stylesheet">
+	<link href="/loginComp/views/min/custom-min.css" type="text/css" rel="stylesheet" >
+</head>
+<body id="top" class="scrollspy">
+
+<!-- Pre Loader -->
+<div id="loader-wrapper">
+	<div id="loader"></div>
+
+	<div class="loader-section section-left"></div>
+	<div class="loader-section section-right"></div>
+
+</div>
+
+<!--Navigation-->
+<div class="navbar-fixed">
+	<nav id="nav_f" class="default_color" role="navigation">
+		<div class="container">
+			<div class="nav-wrapper">
+				<a href="#" id="logo-container" class="brand-logo">SKILLS</a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="#intro">About</a></li>
+					<li><a href="#categories">Categories</a></li>
+					<li><a href="#price">Price</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="http://localhost:8080" target="_blank">Login</a></li>
+				</ul>
+				<ul id="nav-mobile" class="side-nav">
+					<li><a href="#intro">About</a></li>
+					<li><a href="#categories">Categories</a></li>
+					<li><a href="">Price</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="http://localhost:8080" target="_blank">Login</a></li>
+				</ul>
+				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+			</div>
+		</div>
+	</nav>
+</div>
+
+<!--Hero-->
+<div class="section no-pad-bot" id="index-banner">
+	<div class="container">
+		<h1 class="text_h center header cd-headline letters type">
+			<span>We ❤</span>
+            <span class="cd-words-wrapper waiting">
+                <b class="is-visible">Developing</b>
+                <b>Artificial intelligence</b>
+                <b>RESTful</b>
+                <b>Start Ups</b>
+            </span>
+		</h1>
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="jumbotron text-center">
+		<h1><span class="fa fa-lock"></span> Node Authentication</h1>
+
+		<p>Login or Register with:</p>
+
+		<a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
+		<a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+	</div>
+
+</div>
+
+<!--  Scripts-->
+<script src="/loginComp/views/min/plugin-min.js"></script>
+<script src="/loginComp/views/min/custom-min.js"></script>
+
+</body>
+</html>
