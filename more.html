@@ -11,9 +11,48 @@
         <!-- CSS  -->
     <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
+    <style>
+        .blur   {
+            filter: blur(2px);
+            -webkit-filter: blur(0px);
+            -moz-filter: blur(0px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+        }
+        #overlay    {
+            position: fixed;
+            display: none;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            background: rgba(0, 0, 0, 0.78);
+            z-index: 999;
+        }
+        #popup {
+            position: absolute;
+            width: 400px;
+            height: 200px;
+            background: rgb(255,255,255);
+            border: 5px solid rgb(90,90,90);
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body id="top" class="scrollspy">
+<div id="loader-wrapper">
+    <div id="loader"></div>
 
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
+<div id="overlay">
+</div>
 <!-- Pre Loader -->
 <div id="loader-wrapper">
     <div id="loader"></div>
@@ -34,14 +73,14 @@
                     <li><a href="index.html#categories">Categories</a></li>
                     <li><a href="#price">Price</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="http://localhost:8080" target="_blank">Login</a></li>
+                    <li><a href="javascript:myBlurFunction(1);" target="_blank">Login</a></li>
                 </ul>
                 <ul id="nav-mobile" class="side-nav">
                     <li><a href="index.html#intro">About</a></li>
                     <li><a href="index.html#categories">Categories</a></li>
                     <li><a href="">Price</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="http://localhost:8080" target="_blank">Login</a></li>
+                    <li><a href="javascript:myBlurFunction(1);" target="_blank">Login</a></li>
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             </div>
@@ -227,6 +266,28 @@
 <!--  Scripts-->
 <script src="min/plugin-min.js"></script>
 <script src="min/custom-min.js"></script>
+<script>
+    myBlurFunction = function(state) {
+        /* state can be 1 or 0 */
+        var containerElement = document.getElementById('main_container');
+        var overlayEle = document.getElementById('overlay');
 
+        if (state) {
+            overlayEle.style.display = 'block';
+            containerElement.setAttribute('class', 'blur');
+        } else {
+            overlayEle.style.display = 'none';
+            containerElement.setAttribute('class', null);
+        }
+    };
+    var elem = $('#overlay')
+    $( document ).on( 'keydown', function ( e ) {
+        if ( e.keyCode === 27 ) {
+            $( elem ).hide();
+        }
+    });
+
+
+</script>
 </body>
 </html>
