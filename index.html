@@ -9,6 +9,37 @@
     <!-- CSS  -->
     <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
+    <style>
+        .blur   {
+            filter: blur(2px);
+            -webkit-filter: blur(0px);
+            -moz-filter: blur(0px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+        }
+        #overlay    {
+            position: fixed;
+            display: none;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            background: rgba(0, 0, 0, 0.78);
+            z-index: 999;
+        }
+        #popup {
+            position: absolute;
+            width: 400px;
+            height: 200px;
+            background: rgb(255,255,255);
+            border: 5px solid rgb(90,90,90);
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body id="top" class="scrollspy">
 
@@ -20,7 +51,8 @@
     <div class="loader-section section-right"></div>
  
 </div>
-
+<div id="overlay">
+</div>
 <!--Navigation-->
  <div class="navbar-fixed">
     <nav id="nav_f" class="default_color" role="navigation">
@@ -32,7 +64,7 @@
                     <li><a href="#categories">Categories</a></li>
                     <li><a href="#price">Price</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="http://localhost:8080" target="_blank">Login</a></li>
+                    <li><a href="javascript:myBlurFunction(1);" target="_blank">Login</a></li>
                 </ul>
                 <ul id="nav-mobile" class="side-nav">
                     <li><a href="#intro">About</a></li>
@@ -195,121 +227,6 @@
     </div>
 </div>
 
-<!--Parallax-->
-<!--<div class="parallax-container">-->
-    <!--<div class="parallax"><img src="img/parallax1.png"></div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash;Team&ndash;&gt;-->
-<!--<div class="section scrollspy" id="team">-->
-    <!--<div class="container">-->
-        <!--<h2 class="header text_b"> Our Team </h2>-->
-        <!--<div class="row">-->
-            <!--<div class="col s12 m3">-->
-                <!--<div class="card card-avatar">-->
-                    <!--<div class="waves-effect waves-block waves-light">-->
-                        <!--<img class="activator" src="img/avatar1.png">-->
-                    <!--</div>-->
-                    <!--<div class="card-content">-->
-                        <!--<span class="card-title activator grey-text text-darken-4">Flash <br/>-->
-                            <!--<small><em><a class="red-text text-darken-1" href="#">CEO</a></em></small></span>-->
-                        <!--<p>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">-->
-                                <!--<i class="fa fa-facebook-square"></i>-->
-                            <!--</a>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">-->
-                                <!--<i class="fa fa-twitter-square"></i>-->
-                            <!--</a>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">-->
-                                <!--<i class="fa fa-google-plus-square"></i>-->
-                            <!--</a>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">-->
-                                <!--<i class="fa fa-linkedin-square"></i>-->
-                            <!--</a>-->
-                        <!--</p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="col s12 m3">-->
-                <!--<div class="card card-avatar">-->
-                    <!--<div class="waves-effect waves-block waves-light">-->
-                        <!--<img class="activator" src="img/avatar2.png">-->
-                    <!--</div>-->
-                    <!--<div class="card-content">-->
-                        <!--<span class="card-title activator grey-text text-darken-4">Cat Woman<br/>-->
-                            <!--<small><em><a class="red-text text-darken-1" href="#">Designer</a></em></small>-->
-                        <!--</span>-->
-                        <!--<p>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">-->
-                                <!--<i class="fa fa-facebook-square"></i>-->
-                            <!--</a>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">-->
-                                <!--<i class="fa fa-twitter-square"></i>-->
-                            <!--</a>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">-->
-                                <!--<i class="fa fa-google-plus-square"></i>-->
-                            <!--</a>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">-->
-                                <!--<i class="fa fa-linkedin-square"></i>-->
-                            <!--</a>-->
-                        <!--</p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="col s12 m3">-->
-                <!--<div class="card card-avatar">-->
-                    <!--<div class="waves-effect waves-block waves-light">-->
-                        <!--<img class="activator" src="img/avatar3.png">-->
-                    <!--</div>-->
-                    <!--<div class="card-content">-->
-                        <!--<span class="card-title activator grey-text text-darken-4">-->
-                            <!--Capt. America <br/>-->
-                            <!--<small><em><a class="red-text text-darken-1" href="#">CMO</a></em></small></span>-->
-                        <!--<p>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">-->
-                                <!--<i class="fa fa-facebook-square"></i>-->
-                            <!--</a>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">-->
-                                <!--<i class="fa fa-twitter-square"></i>-->
-                            <!--</a>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">-->
-                                <!--<i class="fa fa-google-plus-square"></i>-->
-                            <!--</a>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">-->
-                                <!--<i class="fa fa-linkedin-square"></i>-->
-                            <!--</a>-->
-                        <!--</p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="col s12 m3">-->
-                <!--<div class="card card-avatar">-->
-                    <!--<div class="waves-effect waves-block waves-light">-->
-                        <!--<img class="activator" src="img/avatar4.png">-->
-                    <!--</div>-->
-                    <!--<div class="card-content">-->
-                        <!--<span class="card-title activator grey-text text-darken-4">Robin<br/>-->
-                            <!--<small><em><a class="red-text text-darken-1" href="#">Developer</a></em></small></span>-->
-                        <!--<p>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">-->
-                                <!--<i class="fa fa-facebook-square"></i>-->
-                            <!--</a>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">-->
-                                <!--<i class="fa fa-twitter-square"></i>-->
-                            <!--</a>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">-->
-                                <!--<i class="fa fa-google-plus-square"></i>-->
-                            <!--</a>-->
-                            <!--<a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">-->
-                                <!--<i class="fa fa-linkedin-square"></i>-->
-                            <!--</a>-->
-                        <!--</p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
 
 <!--Footer-->
 <footer id="contact" class="page-footer default_color scrollspy">
@@ -387,6 +304,29 @@
     <!--  Scripts-->
     <script src="min/plugin-min.js"></script>
     <script src="min/custom-min.js"></script>
+    <script>
+        myBlurFunction = function(state) {
+            /* state can be 1 or 0 */
+            var containerElement = document.getElementById('main_container');
+            var overlayEle = document.getElementById('overlay');
+
+            if (state) {
+                overlayEle.style.display = 'block';
+                containerElement.setAttribute('class', 'blur');
+            } else {
+                overlayEle.style.display = 'none';
+                containerElement.setAttribute('class', null);
+            }
+        };
+        var elem = $('#overlay')
+        $( document ).on( 'keydown', function ( e ) {
+            if ( e.keyCode === 27 ) {
+                $( elem ).hide();
+            }
+        });
+
+
+    </script>
 
     </body>
 </html>
